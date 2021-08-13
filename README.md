@@ -6,23 +6,17 @@ projects. **This project has been created from the example given in the
 [keycloak-angular repo](https://github.com/mauriciovigolo/keycloak-angular/tree/master/example) from 
 [mauriciovigolo](https://github.com/mauriciovigolo/)**.
 
+![screenshot](public/screen-01.png)
+
 To run this project make sure you have [Angular CLI](https://cli.angular.io/) and 
 [Docker](https://www.docker.com/) installed on your system.
 
-# Running the application
+# 🛫 Running the application
 
 ## Keycloak server setup
 To start the Keycloak server run `docker-compose up` in the same directory as this README file.
 You can administrate the Keycloak server by navigating to http://localhost:8080/. The default username and password will 
-both be `admin`. 
-
-## Importing the realms and clients
-Once the Keycloak server is up and running, you can import the 3 realms using the exports files available in the `/data`
-folder : `realm-export-fifi.json`, `realm-export-loulou.json`, `realm-export-riri.json` :
-
-1. Authenticate as admin on http://localhost:8080/ (`admin`/`admin`)
-2. Manage > Import > Select file
-3. 
+both be `admin`.
 
 ## Starting Angular frontend
 you can start the client application by running the commands : 
@@ -32,3 +26,8 @@ yarn install
 yarn start
 ````
 Client will be available on http://localhost:4200/ just like any other Angular CLI application.
+
+# ✅ Todos
+- Fix connection problem after Angular dev server refresh
+- Improve `isLoggedInWithDelay`function (today we wait n milliseconds)
+- Validate / tweak client configuration
