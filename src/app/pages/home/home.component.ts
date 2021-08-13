@@ -25,7 +25,8 @@ export class HomeComponent implements OnInit {
     constructor(
                 private readonly keycloak: KeycloakService,
                 private customKeycloakService: CustomKeycloakService,
-                private router: Router) {}
+                private router: Router) {
+    }
 
     ngOnInit() {
         this.isLoading = true;

@@ -3,7 +3,10 @@
         <div class="d-flex justify-content-center w-100">
             <nz-card class="w-100" [nzActions]="[actionEllipsis]" [nzCover]="coverTemplate">
 
-                <table class="table table-borderless">
+                <table class="table table-borderless"><tr *ngIf="this.userProfile.username">
+                    <th *ngIf="this.tenantName" scope="row">Tenant</th>
+                        <td>{{ this.tenantName }}</td>
+                    </tr>
                     <tr *ngIf="this.userProfile.username">
                         <th scope="row">Username</th>
                         <td>{{ this.userProfile.username }}</td>

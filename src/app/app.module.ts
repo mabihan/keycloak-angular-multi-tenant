@@ -15,6 +15,7 @@ import { NzSpinModule } from "ng-zorro-antd/spin";
 import { CustomComponentsModule } from "./custom-components/custom-components.module";
 import { NzButtonModule } from "ng-zorro-antd/button";
 import { PagesModule } from './pages/pages.module';
+import { NzLayoutModule } from "ng-zorro-antd/layout";
 
 registerLocaleData(en);
 
@@ -33,6 +34,7 @@ registerLocaleData(en);
         CustomComponentsModule,
         NzButtonModule,
         PagesModule,
+        NzLayoutModule,
     ],
   providers: [
     CustomKeycloakService,

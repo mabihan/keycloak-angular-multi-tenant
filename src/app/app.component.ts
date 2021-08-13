@@ -31,6 +31,10 @@ export class AppComponent implements OnInit {
             else if (action === ActionType.return) {
                 this.customKeycloakService.initializeKeycloak({ name: realm, clientId: clientId, displayName: null })
                     .then( () => {
+                        this.customKeycloakService.currentRealm = {
+                            name: realm,
+                            clientId: clientId, displayName: null
+                        }
                     })
             }
         }
