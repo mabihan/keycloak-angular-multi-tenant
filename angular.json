@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "keycloak-angular-example": {
+    "keycloak-angular-multitenant": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -43,7 +43,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/keycloak-angular-example",
+            "outputPath": "dist/keycloak-angular-multitenant",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -111,24 +111,24 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "keycloak-angular-example:build"
+            "browserTarget": "keycloak-angular-multitenant:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "keycloak-angular-example:build:production"
+              "browserTarget": "keycloak-angular-multitenant:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "keycloak-angular-example:build"
+            "browserTarget": "keycloak-angular-multitenant:build"
           }
         }
       }
     }
   },
-  "defaultProject": "keycloak-angular-example",
+  "defaultProject": "keycloak-angular-multitenant",
   "cli": {
     "analytics": false
   }
