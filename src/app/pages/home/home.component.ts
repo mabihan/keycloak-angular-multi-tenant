@@ -27,20 +27,6 @@ export class HomeComponent implements OnInit {
                 private customKeycloakService: CustomKeycloakService,
                 private router: Router) {}
 
-    debug() {
-        this.customKeycloakService.isLoggedInWithDelay()
-            .then((value: boolean) => {
-                console.log("isLoggedIn ? : " + value)
-                if (value) {
-                    this.customKeycloakService.keycloakInstance.loadUserProfile()
-                        .then((value: KeycloakProfile) => {
-                            console.log("user profile :")
-                            console.log(value)
-                        })
-                }
-            })
-    }
-
     ngOnInit() {
         this.isLoading = true;
         this.customKeycloakService.isLoggedInWithDelay()
@@ -59,7 +45,7 @@ export class HomeComponent implements OnInit {
     }
 
     public logout() {
-        this.customKeycloakService.keycloakInstance.logout();
+        this.customKeycloakService.keycloakInstance.logout().then()
     }
 
     handleLogin($event: Realm) {

@@ -52,17 +52,17 @@ export class AuthComponent implements OnInit {
 
         this.realmList = [
             {
-                clientId: "angular-client",
+                clientId: "angular-client-riri",
                 name: "riri",
                 displayName: "Riri's realm"
             },
             {
-                clientId: "angular-client",
+                clientId: "angular-client-fifi",
                 name: "fifi",
                 displayName: "Fifi's realm"
             },
             {
-                clientId: "angular-client",
+                clientId: "angular-client-loulou",
                 name: "loulou",
                 displayName: "Loulou's realm"
             }
@@ -105,6 +105,6 @@ export class AuthComponent implements OnInit {
     }
 
     register() {
-        this.onLoginEvent.emit(this.realmList.filter(s => s.name === this.registrationRealm)[0])
+        this.onRegistrationEvent.emit(this.realmList.filter(s => s.name === this.registrationRealm)[0])
     }
 }
