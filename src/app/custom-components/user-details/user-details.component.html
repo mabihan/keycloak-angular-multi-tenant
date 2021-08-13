@@ -1,0 +1,39 @@
+<div *ngIf="userProfile" class="container mt-5 d-flex justify-content-center">
+    <div class="col-6 ">
+        <div class="d-flex justify-content-center w-100">
+            <nz-card class="w-100" [nzActions]="[actionEllipsis]" [nzCover]="coverTemplate">
+
+                <table class="table table-borderless">
+                    <tr *ngIf="this.userProfile.username">
+                        <th scope="row">Username</th>
+                        <td>{{ this.userProfile.username }}</td>
+                    </tr>
+                    <tr *ngIf="this.userProfile.firstName">
+                        <th scope="row">First name</th>
+                        <td>{{ this.userProfile.firstName }}</td>
+                    </tr>
+                    <tr *ngIf="this.userProfile.lastName">
+                        <th scope="row">First name</th>
+                        <td>{{ this.userProfile.lastName }}</td>
+                    </tr>
+                    <tr *ngIf="this.userProfile.email">
+                        <th scope="row">E-mail</th>
+                        <td>{{ this.userProfile.email }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">E-mail verified</th>
+                        <td>{{ this.userProfile.emailVerified ? 'Yes' : 'No' }}</td>
+                    </tr>
+                </table>
+            </nz-card>
+            <ng-template #actionEllipsis>
+                <i (click)="this.logout()" nz-icon nzType="logout" nzTheme="outline" nz-tooltip nzTooltipTitle="Logout"></i>
+            </ng-template>
+            <ng-template #coverTemplate>
+                <div class="d-flex justify-content-center w-100 p2 mt-4">
+                    <h2>Connected user</h2>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>

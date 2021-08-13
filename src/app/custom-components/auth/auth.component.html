@@ -1,0 +1,55 @@
+<div class="container boarding d-flex align-items-center mt-5">
+
+    <div class="d-flex justify-content-center w-100">
+        <div class="col-8">
+            <div class="w-100 mb-3">
+                <nz-card class="w-100" nzHoverable (click)="toggleLoginPanel()">
+                    <div class="d-flex justify-content-between align-items-center ">
+                        <div class="d-flex align-items-center ">
+                            <div class="ml-4">
+                                <h5 class="mb-0" >Login</h5>
+                                <small class="text-muted">Login to your existing account. You will be redirect to the login form.</small>
+                            </div>
+                        </div>
+                        <i nz-icon [nzRotate]="this.loginPanel.rotation" class="arrow" style="font-size: 2em;" nzType="right" nzTheme="outline"></i>
+                    </div>
+                </nz-card>
+                <nz-card *ngIf="loginPanel.active" class="w-100">
+                    <h6>Choose a realm</h6>
+                    <nz-radio-group [(ngModel)]="this.loginRealm">
+                        <label  *ngFor="let realm of this.realmList" nz-radio nzValue="{{realm.name}}">{{realm.displayName}}</label>
+                    </nz-radio-group>
+
+                    <div class="d-flex mt-3">
+                        <button nz-button nzType="primary" (click)="this.login()">Login</button>
+                    </div>
+                </nz-card>
+            </div>
+
+            <div class="w-100 mb-3">
+                <nz-card class="w-100" nzHoverable (click)="toggleRegistrationPanel()">
+                    <div class="d-flex justify-content-between align-items-center ">
+                        <div class="d-flex align-items-center ">
+                            <div class="ml-4">
+                                <h5 class="mb-0" >Register</h5>
+                                <small class="text-muted">Create a new account. You will be redirect to the registration form.</small>
+                            </div>
+                        </div>
+                        <i nz-icon [nzRotate]="this.registrationPanel.rotation" class="arrow" style="font-size: 2em;" nzType="right" nzTheme="outline"></i>
+                    </div>
+                </nz-card>
+                <nz-card *ngIf="registrationPanel.active" class="w-100">
+                    <h6>Choose a realm</h6>
+                    <nz-radio-group [(ngModel)]="this.registrationRealm">
+                        <label  *ngFor="let realm of this.realmList" nz-radio nzValue="{{realm.name}}">{{realm.displayName}}</label>
+                    </nz-radio-group>
+                    <div class="d-flex mt-3">
+                        <button nz-button nzType="primary" (click)="this.register()">Register</button>
+                    </div>
+                </nz-card>
+            </div>
+        </div>
+    </div>
+
+</div>
+

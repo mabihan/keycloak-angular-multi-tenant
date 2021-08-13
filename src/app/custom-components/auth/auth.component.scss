@@ -1,0 +1,13 @@
+nz-collapse-panel {
+  ::ng-deep {
+    .ant-collapse-header {
+      display: none;
+    }
+  }
+}
+
+[nz-radio] {
+  display: block;
+  height: 32px;
+  line-height: 32px;
+}
