@@ -6,6 +6,10 @@ projects. **This project has been created from the example given in the
 [keycloak-angular repo](https://github.com/mauriciovigolo/keycloak-angular/tree/master/example) from 
 [mauriciovigolo](https://github.com/mauriciovigolo/)**.
 
+What you'll get : 
+- A Keycloak server configured with 3 realms
+- An Angular client allowed to login / register on these 3 realms
+
 ![screenshot](public/screen-01.png)
 
 To run this project make sure you have [Angular CLI](https://cli.angular.io/) and 
@@ -19,7 +23,7 @@ You can administrate the Keycloak server by navigating to http://localhost:8080/
 both be `admin`.
 
 ## Starting Angular frontend
-you can start the client application by running the commands : 
+You can start the client application by running the commands : 
 
 ````shell
 yarn install
